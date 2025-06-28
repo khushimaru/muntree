@@ -1,0 +1,47 @@
+---
+const { icon, label } = Astro.props;
+---
+<style>
+  .link-button {
+    background-color: white;
+    border-radius: 999px;
+    padding: 28px 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+	text-align: center;
+	font-size: 20px;
+  }
+
+  .link-button:hover {
+    box-shadow: 0 3px 12px rgba(1, 12, 130, 0.375);
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #1e2a78;
+  }
+
+  .left img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dots {
+    color: #999;
+    font-size: 18px;
+  }
+</style>
+
+<div class="link-button">
+  <div class="left">
+    <img src={icon} alt="" />
+    <span>{label}</span>
+  </div>
+  
+</div>
