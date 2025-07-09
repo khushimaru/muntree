@@ -6,6 +6,6 @@ To Do:
 
 - [x] Make backend (mostly ai but tested)
 
-- [ ] Make frontend
+- [x] Make frontend
 
 - [ ] Dockerize (integrate frontend + backend in docker)

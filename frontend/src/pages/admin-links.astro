@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
       <h1 class="heading">Manage Links 🔗</h1>
       <form id="addLinkForm" class="link-form">
         <input type="text" id="linkTitle" placeholder="Enter Title" required />
-        <input type="url" id="linkUrl" placeholder="Enter URL" required />
+        <input type="url" id="linkUrl" placeholder="Enter URL: https://" required />
         <button type="submit" class="btn primary-btn">Add Link</button>
       </form>
 
@@ -318,7 +318,7 @@ import Layout from "../layouts/Layout.astro";
             return;
           }
           const res = await fetch(
-            `http://localhost:8000/admin/links/${link.id}`,
+            `/api/admin/links/${link.id}`,
             {
               method: "DELETE",
               headers: { Authorization: `Bearer ${token}` },
@@ -366,7 +366,7 @@ import Layout from "../layouts/Layout.astro";
               form.querySelector('[name="editUrl"]') as HTMLInputElement
             ).value;
             const res = await fetch(
-              `http://localhost:8000/admin/links/${link.id}`,
+              `/api/admin/links/${link.id}`,
               {
                 method: "PATCH",
                 headers: {
@@ -397,7 +397,7 @@ import Layout from "../layouts/Layout.astro";
 
   async function loadLinks() {
     if (!linksContainer) return;
-    const res = await fetch("http://localhost:8000/admin/links", {
+    const res = await fetch("/api/admin/links", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -425,7 +425,7 @@ import Layout from "../layouts/Layout.astro";
         return;
       }
 
-      const res = await fetch("http://localhost:8000/admin/links", {
+      const res = await fetch("/api/admin/links", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,5 +1,5 @@
 from sqlmodel import Session, select
-from backend.models import Admin, Link
+from backend.utils.models import Admin, Link
 
 def create_admin(session: Session, admin: Admin):
     session.add(admin)

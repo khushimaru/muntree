@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from backend.routers import admin, links
-from backend.database import create_db_and_tables
+from backend.utils.database import create_db_and_tables
 
 app = FastAPI()
 
