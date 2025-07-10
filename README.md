@@ -12,6 +12,8 @@ To Do:
 
 - [ ] Allow to reposition the links
 
+- [ ] Add rate limiting.
+
 - [ ] Add stats for the visitors.
 
 - [ ] Add logging.
