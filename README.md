@@ -19,6 +19,8 @@ To Do:
 
 ## How to run the application?
 
+Run the following command to copy the file from `backend/.env.sample` to `backend/.env` by `cp backend/.env.sample backend/.env` and now, modify it according to your requirements.
+
 Run the following command to build the image and start the container.
 
 `docker compose up -d`
@@ -31,4 +33,4 @@ This can be changed by modifying docker-compose.yml:23
 
 ---
 
-Made with 💙 by MunSoc Tech Team.
+Made with 💙 by MunSoc Tech Team 2025-26.
