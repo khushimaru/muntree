@@ -1,12 +1,30 @@
-version: "3.9"
-
 services:
-  muntree-backend:
-    build: .
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: muntree-backend
-    env_file: .env
+    env_file:
+      - ./backend/.env
+    networks:
+      - muntree-network
     restart: always
-    volumes:
-      - .:/app
-    working_dir: /app
-    command: uvicorn app:app --host 0.0.0.0 --port 8000
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        PUBLIC_ASTRO_BACKEND_URL: http://backend:8000
+    container_name: muntree-frontend
+    depends_on:
+      - backend
+    ports:
+      - "4321:4321" # Change it to <port to expose on host machine>:4321
+    networks:
+      - muntree-network
+    restart: always
+
+networks:
+  muntree-network:
+    driver: bridge
