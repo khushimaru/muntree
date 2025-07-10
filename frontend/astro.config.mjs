@@ -6,6 +6,7 @@ export default defineConfig({
         mode: 'standalone'
     }),
     server: {
-        port: 8001
+        host: "0.0.0.0",
+        port: 4321
     }
 });
